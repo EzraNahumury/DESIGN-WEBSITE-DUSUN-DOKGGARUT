@@ -1,24 +1,23 @@
-import { Flex, Stack, Box } from '@chakra-ui/react';
-import Hero from './components/Hero.js';
-import Footer from '../../components/Footer.js';
-import LatestNews from './components/LatestNews.js';
-import Travel from './components/Travel.js';
-import VideoPromo from './components/VideoPromo.js';
-import Supports from './components/Supports.js';
-// import {Navbar, Footer} from "./components/index.js"
+import { Helmet } from 'react-helmet-async';
+import Hero from './components/Hero';
+import LatestNews from './components/LatestNews';
+import Travel from './components/Travel';
+import VideoPromo from './components/VideoPromo';
+import Supports from './components/Supports';
 
+// Urutan section sesuai DESIGN-SPEC.md §4 "Landing".
+// Travel membawa id="wisata" pada Box root-nya (target anchor /#wisata).
 export default function LandingPage() {
   return (
-    <Flex flexDirection={'column'}>
-      <Stack spacing={7}>
-        <Hero />
-        <LatestNews />
-        <Box id='wisata'>
-          <Travel />
-        </Box>
-        <VideoPromo />
-        <Supports />
-      </Stack>
-    </Flex>
+    <>
+      <Helmet>
+        <title>Dusun Dokgarut — Desa Watukarung, Pacitan</title>
+      </Helmet>
+      <Hero />
+      <LatestNews />
+      <Travel />
+      <VideoPromo />
+      <Supports />
+    </>
   );
 }

@@ -1,49 +1,101 @@
-import {
-  AspectRatio,
-  Flex,
-  ListItem,
-  Text,
-  UnorderedList,
-} from '@chakra-ui/react';
+import React from 'react';
+import { AspectRatio, Box, Grid, Heading, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+
+const MAPS_EMBED_SRC =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7897.794535719307!2d110.98009984038828!3d-8.213085767276663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bdc32141c6edd%3A0xfdc0a262c350c385!2sDokgarut%2C%20Watukarung%2C%20Pringkuku%2C%20Pacitan%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1752300355382!5m2!1sen!2sid';
+
+// Data administratif tingkat DUSUN (penduduk 164 jiwa = hasil Sensus 2025
+// khusus Dusun Dokgarut, bukan total Desa Watukarung).
+const DATA_DUSUN = [
+  { label: 'Nama Resmi', value: 'Dusun Dokgarut' },
+  { label: 'Desa', value: 'Watukarung' },
+  { label: 'Kecamatan', value: 'Pringkuku' },
+  { label: 'Kabupaten', value: 'Pacitan' },
+  { label: 'Provinsi', value: 'Jawa Timur' },
+  { label: 'Penduduk', value: '164 jiwa — Sensus 2025' },
+];
+
+const BATAS_DUSUN = [
+  { arah: 'Utara', wilayah: 'Desa Dersono' },
+  { arah: 'Selatan', wilayah: 'Dusun Karangnongko' },
+  { arah: 'Barat', wilayah: 'Desa Dersono' },
+  { arah: 'Timur', wilayah: 'Desa Jlubang' },
+  { arah: 'Timur Tenggara', wilayah: 'Dusun Tekil' },
+];
 
 const DataWilayah = () => {
   return (
-    <Flex direction={'column'}>
-      <Text fontFamily="heading" fontWeight="600" fontSize="35px">
-        Data Wilayah
-      </Text>
-      <UnorderedList fontFamily="heading" spacing={3}>
-        <ListItem>Nama Resmi : Dusun Dokgarut </ListItem>
-        <ListItem>Desa : Watukarung </ListItem>
-        <ListItem>Kecamatan : Pringkuku </ListItem>
-        <ListItem>Kabupaten Pacitan</ListItem>
-        <ListItem>Provinsi Jawa Timur </ListItem>
-        <br></br>
-        <Text fontFamily="heading" fontWeight="600" fontSize="35px">
-        Batas Wilayah
-      </Text>
-        
-        <ListItem>Utara : Desa Dersono </ListItem>
-        <ListItem>Selatan : Dusun Karangnongko </ListItem>
-        <ListItem>Barat : Desa Dersono  </ListItem>
-        <ListItem>Timur : Desa Jlubang </ListItem>
-        <ListItem>Timur Tenggara : Dusun Tekil </ListItem>
-      
-        <ListItem>
-          Jumlah Penduduk : 164 jiwa (Sensus Penduduk 2025){' '}
-        </ListItem>
-      </UnorderedList>
+    <Stack spacing={6}>
+      <Heading as="h2" fontSize={{ base: '24px', md: '28px' }}>
+        Data Wilayah Dusun
+      </Heading>
+
+      <SimpleGrid columns={{ base: 2, md: 3 }} gap={4}>
+        {DATA_DUSUN.map(({ label, value }) => (
+          <Box
+            key={label}
+            bg="bg.surface"
+            border="1px solid"
+            borderColor="border.default"
+            rounded="xl"
+            p={4}
+          >
+            <Text
+              fontSize="12px"
+              fontWeight={600}
+              textTransform="uppercase"
+              letterSpacing="0.06em"
+              color="text.muted"
+              mb={1}
+            >
+              {label}
+            </Text>
+            <Text fontSize="16px" fontWeight={600} color="text.primary">
+              {value}
+            </Text>
+          </Box>
+        ))}
+      </SimpleGrid>
+
+      <Heading as="h3" fontSize={{ base: '18px', md: '20px' }}>
+        Batas Wilayah Dusun
+      </Heading>
+
+      <Box border="1px solid" borderColor="border.default" rounded="xl" overflow="hidden">
+        {BATAS_DUSUN.map(({ arah, wilayah }, i) => (
+          <Grid
+            key={arah}
+            templateColumns={{ base: '130px 1fr', md: '170px 1fr' }}
+            px={4}
+            py={3}
+            gap={3}
+            borderBottom={i < BATAS_DUSUN.length - 1 ? '1px solid' : 'none'}
+            borderColor="border.default"
+          >
+            <Text fontSize="15px" fontWeight={600} color="text.primary">
+              {arah}
+            </Text>
+            <Text fontSize="15px" color="text.secondary">
+              {wilayah}
+            </Text>
+          </Grid>
+        ))}
+      </Box>
+
       <AspectRatio
-        ratio={16 / 9}
-        my={5}
-        maxWidth={{ base: '500px', lg: '700px' }}
+        ratio={16 / 10}
+        rounded="xl"
+        overflow="hidden"
+        border="1px solid"
+        borderColor="border.default"
       >
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7897.794535719307!2d110.98009984038828!3d-8.213085767276663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bdc32141c6edd%3A0xfdc0a262c350c385!2sDokgarut%2C%20Watukarung%2C%20Pringkuku%2C%20Pacitan%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1752300355382!5m2!1sen!2sid"
-          title="embed_location"
+          src={MAPS_EMBED_SRC}
+          title="Peta lokasi Dusun Dokgarut"
+          loading="lazy"
         />
       </AspectRatio>
-    </Flex>
+    </Stack>
   );
 };
 

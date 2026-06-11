@@ -1,305 +1,277 @@
+import React, { useEffect } from 'react';
 import {
   Box,
-  Flex,
-  Text,
-  IconButton,
-  // Button,
-  Stack,
+  Button,
   Collapse,
-  Icon,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
+  Container,
+  Flex,
+  HStack,
+  IconButton,
   Image,
-  // Center,
   Link,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuItem,
+  MenuList,
+  Stack,
+  StackDivider,
+  Text,
+  useDisclosure,
 } from '@chakra-ui/react';
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from '@chakra-ui/icons';
+import { ChevronDownIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
-import Logo from '../assets/LOGO KKN - NEW.png';
+import logoDesa from '../assets/logo_watukarung-removebg-preview.png';
 
-function Navbar(props) {
-  const {
-    linkWisata,
-  } = props
-  const { isOpen, onToggle } = useDisclosure();
+const MOBILE_MENU_ID = 'menu-navigasi-mobile';
+const ACTIVE_UNDERLINE = 'inset 0 -2px 0 0 var(--chakra-colors-border-active)';
+
+// Sub-navigasi dropdown Profil — ScrollManager menangani scroll ke hash.
+const PROFIL_SUBNAV = [
+  { label: 'Data Wilayah', to: '/profil#datawilayah' },
+  { label: 'Visi Misi', to: '/profil#visimisi' },
+  { label: 'Logo Desa', to: '/profil#logodesa' },
+  { label: 'Kondisi Geografis', to: '/profil#kondisigeografis' },
+];
+
+const NAV_ITEMS = [
+  { label: 'Beranda', to: '/', isActive: pathname => pathname === '/' },
+  {
+    label: 'Profil',
+    to: '/profil',
+    isActive: pathname => pathname.startsWith('/profil'),
+    children: PROFIL_SUBNAV,
+  },
+  { label: 'Wisata', to: '/#wisata', isActive: () => false },
+  { label: 'Berita', to: '/news', isActive: pathname => pathname.startsWith('/news') },
+  { label: 'Pemetaan', to: '/pemetaan', isActive: pathname => pathname.startsWith('/pemetaan') },
+];
+
+const DesktopNavLink = ({ to, active, children }) => (
+  <Link
+    as={RouterLink}
+    to={to}
+    px={3}
+    py={2}
+    fontSize="15px"
+    fontWeight={500}
+    color={active ? 'text.link' : 'text.secondary'}
+    boxShadow={active ? ACTIVE_UNDERLINE : 'none'}
+    _hover={{ color: 'text.link' }}
+    transition="color 0.2s ease"
+  >
+    {children}
+  </Link>
+);
+
+const ProfilMenu = ({ active }) => (
+  <Menu autoSelect={false}>
+    <MenuButton
+      as={Button}
+      variant="ghost"
+      rightIcon={<ChevronDownIcon />}
+      h="40px"
+      px={3}
+      fontSize="15px"
+      fontWeight={500}
+      rounded="md"
+      color={active ? 'text.link' : 'text.secondary'}
+      boxShadow={active ? ACTIVE_UNDERLINE : 'none'}
+      _hover={{ color: 'text.link' }}
+    >
+      Profil
+    </MenuButton>
+    <MenuList
+      bg="bg.surface"
+      border="1px solid"
+      borderColor="border.default"
+      rounded="xl"
+      shadow="raised"
+      py={2}
+      minW="220px"
+    >
+      <MenuItem
+        as={RouterLink}
+        to="/profil"
+        bg="transparent"
+        fontSize="15px"
+        fontWeight={600}
+        color="text.primary"
+        _hover={{ bg: 'bg.subtle' }}
+        _focus={{ bg: 'bg.subtle' }}
+      >
+        Profil Lengkap
+      </MenuItem>
+      <MenuDivider borderColor="border.default" />
+      {PROFIL_SUBNAV.map(item => (
+        <MenuItem
+          key={item.to}
+          as={RouterLink}
+          to={item.to}
+          bg="transparent"
+          fontSize="15px"
+          color="text.secondary"
+          _hover={{ bg: 'bg.subtle', color: 'text.link' }}
+          _focus={{ bg: 'bg.subtle', color: 'text.link' }}
+        >
+          {item.label}
+        </MenuItem>
+      ))}
+    </MenuList>
+  </Menu>
+);
+
+const MobileNavLink = ({ to, active, onClick, children, ...rest }) => (
+  <Link
+    as={RouterLink}
+    to={to}
+    onClick={onClick}
+    display="block"
+    py={3}
+    fontSize="15px"
+    fontWeight={500}
+    color={active ? 'text.link' : 'text.secondary'}
+    _hover={{ color: 'text.link' }}
+    {...rest}
+  >
+    {children}
+  </Link>
+);
+
+function Navbar() {
+  const { isOpen, onToggle, onClose } = useDisclosure();
+  const { pathname, hash } = useLocation();
+
+  // Tutup menu mobile saat lokasi berubah (termasuk Back/Forward browser).
+  useEffect(() => {
+    onClose();
+  }, [pathname, hash, onClose]);
 
   return (
-    <Box>
-      <Flex
-        bg={useColorModeValue('white', '#1C395A')}
-        color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}
-      >
-        <Flex
-          flex={{ base: 1, md: 'auto' }}
-          ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}
-        >
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
-          />
-        </Flex>
-        <Flex
-          alignItems="center"
-          flex={{ base: 1 }}
-          justify={{ base: 'center', md: 'start' }}
-        >
-          <IconButton
-            aria-label="Logo Kab"
-            isRound={true}
-            icon={
-              <Box
-                bgColor="blue.700" // Ganti dengan skema warna yang Anda inginkan
-                p={2}
-                rounded="full"
-              >
-                <Image src={Logo} alt="Logo Kab" boxSize={6} />
-              </Box>
-            }
-          />
-          <Link href="/">
-            <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily="heading"
-              color={useColorModeValue('gray.600', 'white')}
-              fontWeight={700}
-              ml={2}
-            >
-              DUSUN DOKGARUT
-            </Text>
+    <Box
+      as="header"
+      position="sticky"
+      top={0}
+      zIndex="sticky"
+      bg="rgba(255,255,255,0.86)"
+      _dark={{ bg: 'rgba(11,18,32,0.86)' }}
+      backdropFilter="blur(12px)"
+      sx={{ WebkitBackdropFilter: 'blur(12px)' }}
+      borderBottom="1px solid"
+      borderColor="border.default"
+    >
+      <Container maxW="7xl" px={{ base: 5, md: 8 }}>
+        <Flex h={{ base: '64px', md: '72px' }} align="center" justify="space-between" gap={4}>
+          {/* Logo + wordmark */}
+          <Link
+            as={RouterLink}
+            to="/"
+            display="flex"
+            alignItems="center"
+            gap={3}
+            flexShrink={0}
+            onClick={onClose}
+          >
+            <Image src={logoDesa} alt="" boxSize="36px" objectFit="contain" />
+            <Box lineHeight={1.25}>
+              <Text fontSize="16px" fontWeight={700} color="text.primary">
+                Dusun Dokgarut
+              </Text>
+              <Text fontSize="11px" color="text.muted" display={{ base: 'none', md: 'block' }}>
+                Desa Watukarung · Pacitan
+              </Text>
+            </Box>
           </Link>
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
-          </Flex>
+
+          {/* Navigasi desktop */}
+          <Box as="nav" aria-label="Navigasi utama" display={{ base: 'none', md: 'block' }}>
+            <HStack spacing={{ md: 0, lg: 1 }}>
+              {NAV_ITEMS.map(item =>
+                item.children ? (
+                  <ProfilMenu key={item.label} active={item.isActive(pathname)} />
+                ) : (
+                  <DesktopNavLink key={item.label} to={item.to} active={item.isActive(pathname)}>
+                    {item.label}
+                  </DesktopNavLink>
+                )
+              )}
+            </HStack>
+          </Box>
+
+          {/* Aksi kanan */}
+          <HStack spacing={1}>
+            <ColorModeSwitcher />
+            <IconButton
+              display={{ base: 'inline-flex', md: 'none' }}
+              onClick={onToggle}
+              variant="ghost"
+              aria-label="Buka menu navigasi"
+              aria-expanded={isOpen}
+              aria-controls={MOBILE_MENU_ID}
+              icon={isOpen ? <CloseIcon w={3.5} h={3.5} /> : <HamburgerIcon w={5} h={5} />}
+            />
+          </HStack>
         </Flex>
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={'flex-end'}
-          direction={'row'}
-          spacing={6}
-          alignItems={'center'}
-        >
-          <ColorModeSwitcher />
-        </Stack>
-      </Flex>
+      </Container>
+
+      {/* Menu mobile */}
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <Box
+          as="nav"
+          id={MOBILE_MENU_ID}
+          aria-label="Navigasi utama"
+          display={{ md: 'none' }}
+          px={5}
+          pb={4}
+          borderTop="1px solid"
+          borderColor="border.default"
+        >
+          <Stack spacing={0} divider={<StackDivider borderColor="border.default" />}>
+            {NAV_ITEMS.map(item =>
+              item.children ? (
+                <Box key={item.label}>
+                  <MobileNavLink to={item.to} active={item.isActive(pathname)} onClick={onClose}>
+                    {item.label}
+                  </MobileNavLink>
+                  <Stack
+                    spacing={0}
+                    pl={4}
+                    mb={2}
+                    borderLeft="2px solid"
+                    borderColor="border.default"
+                  >
+                    {item.children.map(child => (
+                      <MobileNavLink
+                        key={child.to}
+                        to={child.to}
+                        active={false}
+                        onClick={onClose}
+                        py={2}
+                        fontSize="14px"
+                        fontWeight={400}
+                      >
+                        {child.label}
+                      </MobileNavLink>
+                    ))}
+                  </Stack>
+                </Box>
+              ) : (
+                <MobileNavLink
+                  key={item.label}
+                  to={item.to}
+                  active={item.isActive(pathname)}
+                  onClick={onClose}
+                >
+                  {item.label}
+                </MobileNavLink>
+              )
+            )}
+          </Stack>
+        </Box>
       </Collapse>
     </Box>
   );
 }
-
-const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-
-  return (
-    <Stack direction={'row'} spacing={4} fontFamily="heading">
-      {NAV_ITEMS.map(navItem => (
-        <Box key={navItem.label}>
-          <Popover trigger={'hover'} placement={'bottom-start'}>
-            <PopoverTrigger>
-              <Box
-                as="a"
-                p={2}
-                href={navItem.href ?? navItem.parenHref}
-                fontSize={'xs'}
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: 'none',
-                  color: linkHoverColor,
-                }}
-              >
-                {navItem.label}
-              </Box>
-            </PopoverTrigger>
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={'xl'}
-                bg={popoverContentBgColor}
-                p={4}
-                rounded={'xl'}
-                minW={'sm'}
-              >
-                <Stack>
-                  {navItem.children.map(child => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
-        </Box>
-      ))}
-    </Stack>
-  );
-};
-
-const DesktopSubNav = ({ label, href, subLabel }) => {
-  return (
-    <Box
-      as="a"
-      href={href}
-      role={'group'}
-      display={'block'}
-      p={2}
-      rounded={'md'}
-      _hover={{ bg: useColorModeValue('teal.50', 'gray.900') }}
-    >
-      <Stack direction={'row'} align={'center'}>
-        <Box>
-          <Text
-            transition={'all .3s ease'}
-            _groupHover={{ color: 'teal.400' }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={'all .3s ease'}
-          transform={'translateX(-10px)'}
-          opacity={0}
-          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-          justify={'flex-end'}
-          align={'center'}
-          flex={1}
-        >
-          <Icon color={'teal.400'} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Box>
-  );
-};
-
-const MobileNav = () => {
-  return (
-    <Stack
-      bg={useColorModeValue('white', 'gray.800')}
-      p={4}
-      display={{ md: 'none' }}
-      fontFamily={'heading'}
-    >
-      {NAV_ITEMS.map(navItem => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-    </Stack>
-  );
-};
-
-const MobileNavItem = ({ label, children, href }) => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Box
-        py={2}
-        as="a"
-        href={href ?? '#'}
-        justifyContent="space-between"
-        alignItems="center"
-        _hover={{
-          textDecoration: 'none',
-        }}
-      >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}
-        >
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={'all .25s ease-in-out'}
-            transform={isOpen ? 'rotate(180deg)' : ''}
-            w={6}
-            h={6}
-          />
-        )}
-      </Box>
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
-          align={'start'}
-        >
-          {children &&
-            children.map(child => (
-              <Box as="a" key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Box>
-            ))}
-        </Stack>
-      </Collapse>
-    </Stack>
-  );
-};
-
-const NAV_ITEMS = [
-  {
-    label: 'Profil',
-    parenHref: '/profil',
-    children: [
-      {
-        label: 'Data Wilayah',
-        href: '/profil/#datawilayah',
-      },
-      {
-        label: 'Visi Misi',
-        href: '/profil/#visimisi',
-      },
-      {
-        label: 'Logo Kabupaten',
-        href: '/profil/#logokabupaten',
-      },
-      {
-        label: 'Kondisi Geografis',
-        href: '/profil/#kondisigeografis',
-      },
-    ],
-  },
-  
-
-  {
-    label: 'Pemetaan',
-    href: '/pemetaan',
-  },
-  {
-    label: 'Wisata',
-    href: '/#wisata',
-  },
-  {
-    label: 'Berita',
-    href: '/news',
-  },
-];
 
 export default Navbar;

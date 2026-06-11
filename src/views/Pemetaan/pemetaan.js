@@ -1,36 +1,107 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import "./pemetaan.css"; // Style lokal
-import financeImage from "./images/peta.png";
+import React from 'react';
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Image,
+  Link,
+  Modal,
+  ModalCloseButton,
+  ModalContent,
+  ModalOverlay,
+  Text,
+  useDisclosure,
+} from '@chakra-ui/react';
+import PageHeader from '../../components/PageHeader';
+import Reveal from '../../components/Reveal';
+import petaWeb from './images/peta-web.jpg';
 
 function Pemetaan() {
-  return (
-    <>
-      {/* Inject Bootstrap CSS & Icons ONLY for this component */}
-      <Helmet>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-          integrity="sha384-9ndCyUa6mY2D1QtnUOHjz4+2d54GKdOEN5eS1X4tIhFg7SwBv5V8dohcfB5l1YQ2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-        />
-      </Helmet>
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-      {/* Judul dan Gambar */}
-      <div className="container text-center py-5 my-5">
-        <h2 className="mb-4 fw-bold" style={{fontSize:"50px", textAlign:"center"}}>Peta Wilayah Dusun Dokgarut</h2>
-        <img
-          src={financeImage}
-          alt="Peta Wilayah"
-          className="img-fluid rounded shadow"
-          style={{ maxWidth: "", width: "90%", padding:"20px" }}
-        />
-      </div>
-    </>
+  return (
+    <Box>
+      <PageHeader
+        kicker="WILAYAH"
+        title="Peta Wilayah Dusun Dokgarut"
+        htmlTitle="Pemetaan — Dusun Dokgarut"
+        description="Peta administratif Dusun Dokgarut dan sekitarnya di Desa Watukarung."
+        breadcrumb={[{ label: 'Beranda', to: '/' }, { label: 'Pemetaan' }]}
+      />
+
+      <Container maxW="7xl" px={{ base: 5, md: 8 }} py={{ base: 10, md: 16 }}>
+        <Reveal>
+          <Box
+            bg="bg.surface"
+            border="1px solid"
+            borderColor="border.default"
+            rounded="2xl"
+            p={{ base: 2, md: 3 }}
+          >
+            <Box
+              as="button"
+              type="button"
+              onClick={onOpen}
+              aria-label="Perbesar peta wilayah Dusun Dokgarut"
+              display="block"
+              w="full"
+              cursor="zoom-in"
+              rounded="xl"
+            >
+              <Image
+                src={petaWeb}
+                alt="Peta wilayah Dusun Dokgarut, Desa Watukarung"
+                loading="lazy"
+                rounded="xl"
+                w="full"
+              />
+            </Box>
+          </Box>
+
+          <Flex
+            justify="space-between"
+            align="center"
+            mt={4}
+            wrap="wrap"
+            gap={3}
+          >
+            <Text fontSize="13px" color="text.muted">
+              Klik peta untuk memperbesar.
+            </Text>
+            <Button
+              as={Link}
+              href={petaWeb}
+              isExternal
+              variant="outline"
+              size="sm"
+            >
+              Buka ukuran penuh
+            </Button>
+          </Flex>
+        </Reveal>
+      </Container>
+
+      <Modal isOpen={isOpen} onClose={onClose} size="full">
+        <ModalOverlay />
+        <ModalContent
+          aria-label="Peta wilayah Dusun Dokgarut (diperbesar)"
+          bg="blackAlpha.800"
+          shadow="none"
+          justifyContent="center"
+        >
+          <ModalCloseButton color="white" />
+          <Image
+            src={petaWeb}
+            alt="Peta wilayah Dusun Dokgarut, Desa Watukarung"
+            maxH="94vh"
+            objectFit="contain"
+            mx="auto"
+            px={{ base: 2, md: 8 }}
+          />
+        </ModalContent>
+      </Modal>
+    </Box>
   );
 }
 

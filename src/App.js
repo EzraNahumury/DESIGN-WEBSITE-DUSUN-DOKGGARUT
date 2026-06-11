@@ -1,29 +1,60 @@
-import React from 'react';
-import { Box } from '@chakra-ui/react';
-// import { ColorModeSwitcher } from './ColorModeSwitcher';
-// import { Logo } from './Logo';
-import Navbar from './components/Navbar.js';
-import LandingPage from './views/LandingPage/index.js';
+import React, { lazy, Suspense } from 'react';
+import { Box, Center, Flex, Link, Spinner } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
-import NewsPage from './views/NewsPage/index.js';
+import Navbar from './components/Navbar.js';
 import Footer from './components/Footer.js';
-import ProfilPage from './views/ProfilPage/index.js';
-import Pemetaan from './views/Pemetaan/pemetaan.js';
-import PageNotFound from './views/PageNotFound/index.js';
+import ScrollManager from './components/ScrollManager.js';
+import LandingPage from './views/LandingPage/index.js';
+
+// Code-splitting per route — halaman dalam dimuat saat dibutuhkan.
+const NewsPage = lazy(() => import('./views/NewsPage/index.js'));
+const ProfilPage = lazy(() => import('./views/ProfilPage/index.js'));
+const Pemetaan = lazy(() => import('./views/Pemetaan/pemetaan.js'));
+const PageNotFound = lazy(() => import('./views/PageNotFound/index.js'));
+
+const PageFallback = () => (
+  <Center minH="50vh">
+    <Spinner size="lg" color="brand.600" thickness="3px" />
+  </Center>
+);
 
 function App() {
   return (
-    <Box>
+    <Flex direction="column" minH="100vh">
+      {/* Skip link untuk pengguna keyboard — tampil hanya saat fokus */}
+      <Link
+        href="#konten"
+        position="absolute"
+        top={2}
+        left={2}
+        zIndex="skipLink"
+        transform="translateY(-200%)"
+        bg="bg.surface"
+        color="text.link"
+        fontWeight={600}
+        px={4}
+        py={2}
+        rounded="lg"
+        shadow="raised"
+        _focus={{ transform: 'none' }}
+      >
+        Lewati ke konten
+      </Link>
+      <ScrollManager />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/news" element={<NewsPage />} />
-        <Route path="/profil" element={<ProfilPage />} />
-        <Route path="/pemetaan" element={<Pemetaan />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-      <Footer />  
-    </Box>
+      <Box as="main" id="konten" flex="1">
+        <Suspense fallback={<PageFallback />}>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/profil" element={<ProfilPage />} />
+            <Route path="/pemetaan" element={<Pemetaan />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </Suspense>
+      </Box>
+      <Footer />
+    </Flex>
   );
 }
 

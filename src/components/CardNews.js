@@ -1,45 +1,62 @@
 import {
-  Card,
-  Text,
-  CardHeader,
-  CardBody,
+  AspectRatio,
   Badge,
+  Box,
+  Flex,
   Heading,
-  Image
+  Image,
+  Text,
 } from '@chakra-ui/react';
-import Image404 from "../assets/Image404.png"
 
-export default function CardNews({title, image,caption, date}) {
+// Kartu berita utama — kontrak props lihat DESIGN-SPEC.md §3.
+// category: 'pemerintahan' | 'pendidikan' | 'kesehatan'
+const CardNews = ({ title, image, date, caption, category }) => {
   return (
-    <Card
-      size="md"
+    <Box
+      role="group"
+      w="100%"
+      bg="bg.surface"
+      border="1px solid"
+      borderColor="border.default"
+      rounded="2xl"
+      overflow="hidden"
+      transition="all 0.2s ease"
       _hover={{
-        transform: 'translateY(-5px)',
-        transition: 'transform 0.3s',
+        transform: 'translateY(-2px)',
+        shadow: 'lift',
+        borderColor: 'border.hover',
       }}
-      w={"400px"}
-    //   h="100%"
-      // m={{ base: '1' }}
     >
-        <Image
-        src={image}
-        alt='ImageNews'
-        objectFit="cover"
-        // maxW="300px"
-        />
-      <CardHeader pb={0}>
-        <Badge colorScheme="green" fontSize="xs" mb="2" fontFamily="default">
-          {date}
-        </Badge>
-        <Heading size={{ base: 'sm', lg: 'sm' }}>
+      <AspectRatio ratio={16 / 9}>
+        <Image src={image} alt="" objectFit="cover" loading="lazy" />
+      </AspectRatio>
+
+      <Box p={5}>
+        <Flex align="center" gap={3} wrap="wrap">
+          <Badge variant={category}>{category}</Badge>
+          <Text fontSize="13px" color="text.muted">
+            {date}
+          </Text>
+        </Flex>
+
+        <Heading
+          as="h3"
+          fontSize={{ base: '18px', md: '20px' }}
+          lineHeight={1.4}
+          noOfLines={2}
+          mt={3}
+          transition="color 0.2s ease"
+          _groupHover={{ color: 'text.link' }}
+        >
           {title}
         </Heading>
-      </CardHeader>
-      <CardBody fontFamily="body" pb={2}>
-        <Text fontSize={{ lg: 'sm', base: 'xs' }} numberOfLine={1} >
-          {caption} 
+
+        <Text fontSize="15px" color="text.secondary" noOfLines={2} mt={2}>
+          {caption}
         </Text>
-      </CardBody>
-    </Card>
+      </Box>
+    </Box>
   );
-}
+};
+
+export default CardNews;

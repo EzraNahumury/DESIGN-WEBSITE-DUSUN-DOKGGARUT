@@ -1,186 +1,116 @@
 import React from 'react';
 import {
   Box,
-  chakra,
   Container,
+  Flex,
+  Image,
+  Link,
   SimpleGrid,
   Stack,
   Text,
-  VisuallyHidden,
-  Input,
-  IconButton,
-  useColorModeValue,
-  Image,
-  Link,
 } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube, FaFacebook } from 'react-icons/fa';
-import { BiMailSend } from 'react-icons/bi';
-// import { ReactComponent as LogoSvg } from '../assets/LogoDaerah.svg';
-import LogoDaerah from '../assets/Logo_Daerah.png';
-import LogoDaerahKabProb from '../assets/logo_watukarung-removebg-preview.png';
+import { Link as RouterLink } from 'react-router-dom';
+import LogoDesa from '../assets/logo_watukarung-removebg-preview.png';
 
-const Logo = props => {
-  return (
-    <svg
-      height={32}
-      viewBox="0 0 120 30"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      {/* SVG path data */}
-      {/* <LogoSvg /> */}
-    </svg>
-  );
-};
+const navLinks = [
+  { label: 'Beranda', to: '/' },
+  { label: 'Profil', to: '/profil' },
+  { label: 'Wisata', to: '/#wisata' },
+  { label: 'Berita', to: '/news' },
+  { label: 'Pemetaan', to: '/pemetaan' },
+];
 
-const SocialButton = ({ children, label, href }) => {
-  return (
-    <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-      rounded={'full'}
-      w={8}
-      h={8}
-      cursor={'pointer'}
-      as={'a'}
-      href={href}
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
-      _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
-      }}
-    >
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
-  );
-};
+const ColumnTitle = ({ children }) => (
+  <Text
+    fontSize="13px"
+    fontWeight={600}
+    textTransform="uppercase"
+    letterSpacing="0.06em"
+    color="whiteAlpha.700"
+    mb={4}
+  >
+    {children}
+  </Text>
+);
 
-const ListHeader = ({ children }) => {
-  return (
-    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
-      {children}
-    </Text>
-  );
+const footerLinkStyle = {
+  fontSize: '15px',
+  color: 'whiteAlpha.800',
+  _hover: { color: 'white' },
 };
 
 export default function Footer() {
   return (
-    <Box
-      bg={useColorModeValue('gray.100', '#1C395A')}
-      color={useColorModeValue('gray.700', 'gray.200')}
-      fontFamily={'heading'}
-    >
-      <Container as={Stack} maxW={'6xl'} py={10}>
-        <SimpleGrid
-          templateColumns={{ sm: '1fr 1fr', md: '1fr 2fr 1fr 1fr 2fr' }}
-          spacing={4}
-        >
-          <Box>
-            <Image
-              src={LogoDaerahKabProb}
-              boxSize={{ base: '100px', md: '200px' }}
-              fit={'contain'}
-            />
-          </Box>
-          <Stack spacing={3}>
-            <Text fontSize={'lg'} fontWeight={'bold'}>
+    <Box as="footer" bg="brand.900" borderTop="4px solid" borderTopColor="accent.500">
+      <Container maxW="7xl" px={{ base: 5, md: 8 }} py={{ base: 12, md: 16 }}>
+        <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} spacing={{ base: 10, lg: 8 }}>
+          {/* Identitas dusun */}
+          <Stack spacing={4} align="flex-start">
+            <Flex
+              boxSize="48px"
+              rounded="full"
+              bg="white"
+              align="center"
+              justify="center"
+              p={1}
+            >
+              <Image
+                src={LogoDesa}
+                alt="Logo Desa Watukarung"
+                boxSize="40px"
+                objectFit="contain"
+                loading="lazy"
+              />
+            </Flex>
+            <Text fontSize="16px" fontWeight={700} color="white">
               Dusun Dokgarut
             </Text>
-            <Text fontSize={'sm'}>
-              Watukarung, Pringkuku, Pacitan Regency, East Java
+            <Text fontSize="14px" color="whiteAlpha.700">
+              Dusun Dokgarut, Desa Watukarung, Kecamatan Pringkuku, Kabupaten
+              Pacitan, Jawa Timur
             </Text>
-            <Text fontSize={'sm'}>© 2025 Dokgarut</Text>
-            <Text fontSize={'sm'}>Tel : +6282338142821</Text>
-            <Text fontSize={'sm'}>Fax : +6282338142821</Text>
-            <Stack direction={'row'} spacing={6}>
-              <SocialButton
-                label={'Twitter'}
-                href={'https://twitter.com/Infokabprob'}
-              >
-                <FaTwitter />
-              </SocialButton>
-              <SocialButton
-                label={'YouTube'}
-                href={
-                  'https://www.youtube.com/channel/UCl1Skf0XEOJG0Ll_DBqRvMA'
-                }
-              >
-                <FaYoutube />
-              </SocialButton>
-              <SocialButton
-                label={'Facebook'}
-                href={'https://www.facebook.com/infoprobolinggokab'}
-              >
-                <FaFacebook />
-              </SocialButton>
-            </Stack>
           </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Company</ListHeader>
-            <Box as="a" href={'#'}>
-              About us
-            </Box>
-            <Box as="a" href={'#'}>
-              Blog
-            </Box>
-            <Box as="a" href={'#'}>
-              Contact us
-            </Box>
-            <Box as="a" href={'#'}>
-              Pricing
-            </Box>
-            <Box as="a" href={'#'}>
-              Testimonials
-            </Box>
+
+          {/* Navigasi */}
+          <Stack spacing={3} align="flex-start">
+            <ColumnTitle>Navigasi</ColumnTitle>
+            {navLinks.map(item => (
+              <Link key={item.to} as={RouterLink} to={item.to} {...footerLinkStyle}>
+                {item.label}
+              </Link>
+            ))}
           </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Support</ListHeader>
-            <Box as="a" href={'#'}>
-              Help Center
-            </Box>
-            <Box as="a" href={'#'}>
-              Terms of Service
-            </Box>
-            <Box as="a" href={'#'}>
-              Legal
-            </Box>
-            <Box as="a" href={'#'}>
-              Privacy Policy
-            </Box>
-            <Box as="a" href={'#'}>
-              Status
-            </Box>
+
+          {/* Kontak */}
+          <Stack spacing={3} align="flex-start">
+            <ColumnTitle>Kontak</ColumnTitle>
+            <Link href="https://wa.me/6282338142821" isExternal {...footerLinkStyle}>
+              Telepon / WhatsApp
+            </Link>
+            <Link
+              href="https://www.google.com/maps/place/Dokgarut,+Watukarung,+Pringkuku,+Pacitan+Regency,+East+Java"
+              isExternal
+              {...footerLinkStyle}
+            >
+              Lihat lokasi di Google Maps
+            </Link>
           </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Stay up to date</ListHeader>
-            <Stack direction={'row'}>
-              <Input
-                placeholder={'Your email address'}
-                bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-                border={0}
-                _focus={{
-                  bg: 'whiteAlpha.300',
-                }}
-              />
-              <IconButton
-                bg={useColorModeValue('blue.400', 'blue.800')}
-                color={useColorModeValue('white', 'gray.800')}
-                _hover={{
-                  bg: 'blue.600',
-                }}
-                aria-label="Subscribe"
-                icon={<BiMailSend />}
-              />
-            </Stack>
-            <Text fontWeight="700" marginTop="45px">
-              Made By
-              <Link href="https://github.com/EzraNahumury" ml={1}>@KKN 34 UKDW 2025</Link>
-              😸
+
+          {/* Tentang situs */}
+          <Stack spacing={3} align="flex-start">
+            <ColumnTitle>Tentang Situs</ColumnTitle>
+            <Text fontSize="15px" color="whiteAlpha.800">
+              Dibangun oleh Tim KKN 34 UKDW 2025
             </Text>
           </Stack>
         </SimpleGrid>
+
+        {/* Bottom bar */}
+        <Box borderTop="1px solid" borderTopColor="whiteAlpha.200" pt={6} mt={10}>
+          <Text fontSize="13px" color="whiteAlpha.700">
+            © 2025 Dusun Dokgarut · Desa Watukarung, Pacitan
+          </Text>
+        </Box>
       </Container>
     </Box>
   );

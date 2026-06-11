@@ -1,48 +1,46 @@
-import {
-  Box,
-  Card,
-  Image,
-  Text,
-  Stack,
-  CardBody,
-  // CardHeader,
-  Heading,
-  CardFooter,
-  Button,
-  Badge,
-} from '@chakra-ui/react';
+import { Badge, Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
 
-const SmallCardNews = ({ image, title, date }) => {
+// Kartu berita ringkas untuk sidebar "Terbaru" — kontrak props lihat DESIGN-SPEC.md §3.
+const SmallCardNews = ({ title, image, date, category }) => {
   return (
-    <Box>
-      <Card
-        direction={{ base: 'column', sm: 'row' }}
-        overflow="hidden"
-        variant="outline"
-        _hover={{
-          transform: 'translateY(-5px)',
-          transition: 'transform 0.3s',
-        }}
-        size={{ base: "sm" }}
-      >
-        <Image
-          objectFit="cover"
-          maxW={{ base: '100%', sm: '200px', lg : "250px" }}
-          src={image}
-          alt="Image News"
-        />
+    <Flex
+      gap={4}
+      p={3}
+      rounded="xl"
+      transition="background 0.2s ease"
+      _hover={{ bg: 'bg.subtle' }}
+    >
+      <Image
+        src={image}
+        alt=""
+        boxSize="96px"
+        rounded="lg"
+        objectFit="cover"
+        flexShrink={0}
+        loading="lazy"
+      />
 
-        <Stack>
-          <CardBody>
-            <Heading size={{ base: "sm",lg : "md" }}>{title}</Heading>
+      <Box minW={0}>
+        <Badge variant={category} fontSize="10px">
+          {category}
+        </Badge>
 
-            <Badge fontFamily="default" size={{ base: "sm" }} my={2}>
-              <Text py="2">{date}</Text>
-            </Badge>
-          </CardBody>
-        </Stack>
-      </Card>
-    </Box>
+        <Heading
+          as="h3"
+          fontSize="15px"
+          fontWeight={600}
+          lineHeight={1.4}
+          noOfLines={2}
+          mt={2}
+        >
+          {title}
+        </Heading>
+
+        <Text fontSize="13px" color="text.muted" mt={1}>
+          {date}
+        </Text>
+      </Box>
+    </Flex>
   );
 };
 

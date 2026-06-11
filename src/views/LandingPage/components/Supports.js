@@ -1,79 +1,62 @@
-import {
-  AspectRatio,
-  Box,
-  Flex,
-  Image,
-  Link,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import spt from '../../../assets/supports/image 5.png';
+import { Box, Container, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import SectionHeading from '../../../components/SectionHeading';
+import Reveal from '../../../components/Reveal';
 import { institutionSupports } from '../../../variables/general';
-const Supports = () => {
-  const bgSupport = useColorModeValue("transparent", "gray.200")
 
+const Supports = () => {
   return (
-    <Flex flexDirection="column" alignItems="center" textAlign="center" mt={100}>
-      <Text
-        fontFamily={'heading'}
-        fontSize={{ base: '25px', md: '35px', lg: '45px' }}
-        fontWeight={700}
-        mb={{ base: '5px', md: '7px', lg: '10px' }}
-        mt={{ base: '15px', md: '18px', lg: '20px' }}
-        ml={{ base: '5px', md: '7px', lg: '10px' }}
-        color={useColorModeValue('blue.700', 'gray.100')}
-      >
-        Lembaga & Program Dusun
-      </Text>
-      <Flex flexDirection="row" p={"45px"} justifyContent="center" alignContent={"center"} flexWrap="wrap">
-        {institutionSupports.map((e, index) => {
-          return (
-            <Link href="https://pacitankab.go.id/">
+    // bg.surface — pola zebra section landing (surface → canvas → navy → surface)
+    <Box as="section" bg="bg.surface">
+      <Container maxW="7xl" px={{ base: 5, md: 8 }} py={{ base: 14, md: 24 }}>
+        <Reveal>
+          <SectionHeading
+            align="center"
+            kicker="PENGGERAK DUSUN"
+            title="Lembaga & Program Dusun"
+          />
+        </Reveal>
+        <Reveal delay={0.1}>
+          <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 7 }} gap={4}>
+            {institutionSupports.map(institution => (
               <Box
-                m={2}
-                w={{ base : "130px",lg: "300px" }}
-                h={{ base : "65px",lg: "150px" }}
-                border="3px solid black"
-                rounded="lg"
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                bg={bgSupport}
-                _hover={{ bg: 'gray.100' }}
+                key={institution.title}
+                role="group"
+                // Putih konstan di kedua mode — logo PNG transparan butuh latar terang.
+                bg="white"
+                rounded="xl"
+                border="1px solid"
+                borderColor="border.default"
+                p={5}
+                textAlign="center"
+                transition="all 0.2s ease"
+                _hover={{
+                  transform: 'translateY(-2px)',
+                  shadow: 'lift',
+                  borderColor: 'border.hover',
+                }}
               >
                 <Image
-                  src={e.image}
-                  alt={e.title}
+                  src={institution.image}
+                  alt={institution.title}
+                  mx="auto"
+                  h="64px"
                   objectFit="contain"
-                  w={{base: "50px", lg: "140px" }}
+                  loading="lazy"
+                  filter="grayscale(100%)"
+                  opacity={0.65}
+                  transition="all 0.3s ease"
+                  _groupHover={{ filter: 'grayscale(0)', opacity: 1 }}
                 />
+                <Text mt={3} fontSize="13px" fontWeight={600} color="gray.700">
+                  {institution.title}
+                </Text>
               </Box>
-            </Link>
-          );
-        })}
-      </Flex>
-    </Flex>
+            ))}
+          </SimpleGrid>
+        </Reveal>
+      </Container>
+    </Box>
   );
 };
 
 export default Supports;
-
-const supportBox = () => {
-  return (
-    <Link href="youtube.com">
-      <Box
-        w="300px"
-        h="150px"
-        border="3px solid black"
-        rounded="lg"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        // bg="teal"
-        _hover={{ bg: 'gray.100' }}
-      >
-        <Image src={spt} alt={'Youtube'} objectFit="contain" w="140px" />
-      </Box>
-    </Link>
-  );
-};
