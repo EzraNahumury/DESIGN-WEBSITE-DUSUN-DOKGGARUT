@@ -18,6 +18,7 @@ const navLinks = [
   { label: 'Wisata', to: '/#wisata' },
   { label: 'Berita', to: '/news' },
   { label: 'Pemetaan', to: '/pemetaan' },
+  { label: 'Tim KKN', to: '/tim' },
 ];
 
 const ColumnTitle = ({ children }) => (

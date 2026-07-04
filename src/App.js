@@ -11,6 +11,7 @@ const NewsPage = lazy(() => import('./views/NewsPage/index.js'));
 const NewsDetail = lazy(() => import('./views/NewsDetail/index.js'));
 const ProfilPage = lazy(() => import('./views/ProfilPage/index.js'));
 const Pemetaan = lazy(() => import('./views/Pemetaan/pemetaan.js'));
+const TeamPage = lazy(() => import('./views/TeamPage/index.js'));
 const PageNotFound = lazy(() => import('./views/PageNotFound/index.js'));
 
 const PageFallback = () => (
@@ -51,6 +52,7 @@ function App() {
             <Route path="/news/:newsId" element={<NewsDetail />} />
             <Route path="/profil" element={<ProfilPage />} />
             <Route path="/pemetaan" element={<Pemetaan />} />
+            <Route path="/tim" element={<TeamPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Suspense>

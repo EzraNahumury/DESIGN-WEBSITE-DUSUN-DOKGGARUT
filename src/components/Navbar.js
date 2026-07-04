@@ -17,9 +17,11 @@ import {
   Stack,
   StackDivider,
   Text,
+  Tooltip,
   useDisclosure,
 } from '@chakra-ui/react';
 import { ChevronDownIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { FaUserFriends } from 'react-icons/fa';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import logoDesa from '../assets/logo_watukarung-removebg-preview.png';
@@ -201,6 +203,17 @@ function Navbar() {
 
           {/* Aksi kanan */}
           <HStack spacing={1}>
+            <Tooltip label="Tim KKN 34 UKDW" rounded="md" fontSize="13px">
+              <IconButton
+                as={RouterLink}
+                to="/tim"
+                variant="ghost"
+                aria-label="Tim KKN 34 UKDW"
+                fontSize="lg"
+                color={pathname.startsWith('/tim') ? 'text.link' : 'current'}
+                icon={<FaUserFriends />}
+              />
+            </Tooltip>
             <ColorModeSwitcher />
             <IconButton
               display={{ base: 'inline-flex', md: 'none' }}

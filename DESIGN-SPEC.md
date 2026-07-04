@@ -63,6 +63,9 @@ Halaman artikel penuh. Isi artikel di **`src/variables/newsArticles.js`** (objek
 - **LogoKabupaten** → judul "Logo Desa Watukarung": logo 200-240px dalam panel `bg.subtle` `rounded="2xl"` p 10 center; makna lambang & warna sebagai list rapi (judul item 600 + deskripsi `text.secondary`) — perbaiki line-break janggal di teks sumber.
 - **KondisiGeo**: prose 17px lh 1.75 maxW 68ch, sub-judul H3, rapikan paragraf (teks sumber punya line-break aneh — gabungkan).
 
+### TeamPage (`src/views/TeamPage/index.js`) — route `/tim`
+Halaman anggota Tim KKN 34 UKDW (unit "Dokgarut 34"). Data di **`src/variables/team.js`** (`teamMembers` + `teamUnit`); foto poster perkenalan di `public/team` — pakai versi `.jpg` terkompresi (lebar 1100px, asli `.png` 1,8–2 MB dibiarkan sebagai sumber). `PageHeader` (kicker "DI BALIK SITUS INI") → intro 1 paragraf + badge jumlah anggota → grid poster `SimpleGrid` base 1/sm 2/lg 4, kartu = `button` (poster `AspectRatio 4/5` + caption jabatan/nama/prodi, hover lift + foto scale 1.03) → klik buka `Modal` lightbox poster penuh (overlay `blackAlpha.700` blur) → band penutup `brand.900` berisi tagline `#BersamaBerbuatBermanfaat`. Akses dari ikon `FaUserFriends` di navbar (kanan, sebelum `ColorModeSwitcher`, Tooltip, aktif = `text.link`) dan link "Tim KKN" di footer.
+
 ### Pemetaan (`src/views/Pemetaan/pemetaan.js`)
 **HAPUS react-helmet Bootstrap CDN + pemetaan.css + import Bootstrap apa pun** — full Chakra. `PageHeader` (kicker "WILAYAH", title "Peta Wilayah Dusun Dokgarut"). Gambar **`./images/peta-web.jpg`** (SUDAH dibuat, 715KB — JANGAN import peta.png 41MB) dalam kartu `rounded="2xl"` border p 2 `bg.surface`, `Image rounded="xl"` `loading="lazy"` alt deskriptif; klik buka Chakra `Modal size="full"` berisi gambar (lightbox) + tombol `outline` "Buka ukuran penuh" (link gambar target _blank). Caption 13px `text.muted`. Hapus file pemetaan.css dari import (file boleh dibiarkan).
 
