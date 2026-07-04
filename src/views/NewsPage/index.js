@@ -67,6 +67,7 @@ export default function NewsPage() {
                 {filtered.map((item, i) => (
                   <Reveal key={item.id} delay={(i % 2) * 0.06}>
                     <CardNews
+                      id={item.id}
                       title={item.title}
                       image={item.image}
                       date={item.date}
@@ -87,6 +88,7 @@ export default function NewsPage() {
               {allNews.slice(0, 5).map(item => (
                 <SmallCardNews
                   key={item.id}
+                  id={item.id}
                   title={item.title}
                   image={item.image}
                   date={item.date}

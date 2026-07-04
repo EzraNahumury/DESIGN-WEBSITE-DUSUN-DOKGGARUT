@@ -1,14 +1,26 @@
-import { Badge, Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
+import {
+  Badge,
+  Box,
+  Heading,
+  Image,
+  LinkBox,
+  LinkOverlay,
+  Text,
+} from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 
 // Kartu berita ringkas untuk sidebar "Terbaru" — kontrak props lihat DESIGN-SPEC.md §3.
-const SmallCardNews = ({ title, image, date, category }) => {
+// Seluruh kartu bisa diklik menuju /news/:id.
+const SmallCardNews = ({ id, title, image, date, category }) => {
   return (
-    <Flex
+    <LinkBox
+      display="flex"
       gap={4}
       p={3}
       rounded="xl"
       transition="background 0.2s ease"
       _hover={{ bg: 'bg.subtle' }}
+      _focusWithin={{ bg: 'bg.subtle' }}
     >
       <Image
         src={image}
@@ -33,14 +45,20 @@ const SmallCardNews = ({ title, image, date, category }) => {
           noOfLines={2}
           mt={2}
         >
-          {title}
+          <LinkOverlay
+            as={RouterLink}
+            to={`/news/${id}`}
+            _focusVisible={{ outline: 'none' }}
+          >
+            {title}
+          </LinkOverlay>
         </Heading>
 
         <Text fontSize="13px" color="text.muted" mt={1}>
           {date}
         </Text>
       </Box>
-    </Flex>
+    </LinkBox>
   );
 };
 

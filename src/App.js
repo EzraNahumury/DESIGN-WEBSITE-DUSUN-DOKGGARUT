@@ -8,6 +8,7 @@ import LandingPage from './views/LandingPage/index.js';
 
 // Code-splitting per route — halaman dalam dimuat saat dibutuhkan.
 const NewsPage = lazy(() => import('./views/NewsPage/index.js'));
+const NewsDetail = lazy(() => import('./views/NewsDetail/index.js'));
 const ProfilPage = lazy(() => import('./views/ProfilPage/index.js'));
 const Pemetaan = lazy(() => import('./views/Pemetaan/pemetaan.js'));
 const PageNotFound = lazy(() => import('./views/PageNotFound/index.js'));
@@ -47,6 +48,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/news" element={<NewsPage />} />
+            <Route path="/news/:newsId" element={<NewsDetail />} />
             <Route path="/profil" element={<ProfilPage />} />
             <Route path="/pemetaan" element={<Pemetaan />} />
             <Route path="*" element={<PageNotFound />} />

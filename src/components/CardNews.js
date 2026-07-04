@@ -1,20 +1,26 @@
 import {
   AspectRatio,
   Badge,
-  Box,
   Flex,
   Heading,
   Image,
+  LinkBox,
+  LinkOverlay,
   Text,
+  Box,
 } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 
 // Kartu berita utama — kontrak props lihat DESIGN-SPEC.md §3.
 // category: 'pemerintahan' | 'pendidikan' | 'kesehatan'
-const CardNews = ({ title, image, date, caption, category }) => {
+// Seluruh kartu bisa diklik menuju /news/:id (LinkOverlay pada judul).
+const CardNews = ({ id, title, image, date, caption, category }) => {
   return (
-    <Box
+    <LinkBox
+      as="article"
       role="group"
       w="100%"
+      h="100%"
       bg="bg.surface"
       border="1px solid"
       borderColor="border.default"
@@ -25,6 +31,10 @@ const CardNews = ({ title, image, date, caption, category }) => {
         transform: 'translateY(-2px)',
         shadow: 'lift',
         borderColor: 'border.hover',
+      }}
+      _focusWithin={{
+        shadow: 'lift',
+        borderColor: 'border.active',
       }}
     >
       <AspectRatio ratio={16 / 9}>
@@ -48,14 +58,33 @@ const CardNews = ({ title, image, date, caption, category }) => {
           transition="color 0.2s ease"
           _groupHover={{ color: 'text.link' }}
         >
-          {title}
+          <LinkOverlay
+            as={RouterLink}
+            to={`/news/${id}`}
+            _focusVisible={{ outline: 'none' }}
+          >
+            {title}
+          </LinkOverlay>
         </Heading>
 
         <Text fontSize="15px" color="text.secondary" noOfLines={2} mt={2}>
           {caption}
         </Text>
+
+        <Text
+          fontSize="14px"
+          fontWeight={600}
+          color="text.link"
+          mt={3}
+          opacity={0}
+          transform="translateX(-4px)"
+          transition="all 0.2s ease"
+          _groupHover={{ opacity: 1, transform: 'translateX(0)' }}
+        >
+          Baca selengkapnya →
+        </Text>
       </Box>
-    </Box>
+    </LinkBox>
   );
 };
 
