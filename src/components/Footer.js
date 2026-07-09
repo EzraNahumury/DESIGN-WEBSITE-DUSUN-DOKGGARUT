@@ -103,6 +103,9 @@ export default function Footer() {
             <Text fontSize="15px" color="whiteAlpha.800">
               Dibangun oleh Tim KKN 34 UKDW 2025
             </Text>
+            <Text fontSize="15px" color="whiteAlpha.800">
+              Dilanjutkan oleh Tim KKN 43 UKDW 2026
+            </Text>
           </Stack>
         </SimpleGrid>
 
