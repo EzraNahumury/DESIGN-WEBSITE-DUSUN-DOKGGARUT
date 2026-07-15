@@ -416,6 +416,251 @@ const newsArticles = {
       text: 'Kini, bertahun-tahun kemudian, semangat yang sama tetap relevan: tidak boleh ada anak Dokgarut yang putus sekolah hanya karena biaya.',
     },
   ],
+
+  'gores-warna': [
+    {
+      type: 'p',
+      text: 'Dusun Dokgarut, Watukarung, Pacitan – Jumat (3/7/2026), mahasiswa Kuliah Kerja Nyata (KKN) UKDW menyelenggarakan program kerja "Gores Warna", sebuah kegiatan edukatif yang mengajak anak-anak mengenal berbagai profesi melalui aktivitas menggambar. Program ini hadir sebagai ruang belajar yang menyenangkan untuk menumbuhkan kreativitas sekaligus memperluas wawasan anak mengenai cita-cita, perkembangan teknologi, serta pentingnya menjaga lingkungan.',
+    },
+    {
+      type: 'p',
+      text: 'Bagi banyak anak, menggambar bukan sekadar kegiatan mengisi waktu luang. Melalui setiap garis dan warna yang mereka tuangkan di atas kertas, tersimpan berbagai cerita, impian, dan harapan tentang masa depan. Namun, tidak semua anak memiliki kesempatan untuk mengenal beragam profesi yang berkembang di era saat ini. Sebagian besar masih terbatas pada profesi yang sering mereka jumpai dalam kehidupan sehari-hari.',
+    },
+    { type: 'h2', text: 'Menggabungkan Seni, Edukasi, dan Pengenalan Profesi' },
+    {
+      type: 'p',
+      text: 'Berangkat dari kondisi tersebut, mahasiswa KKN menghadirkan Gores Warna sebagai media pembelajaran yang menggabungkan seni, edukasi, dan pengenalan profesi. Kegiatan diawali dengan sesi perkenalan mengenai berbagai cita-cita, dilanjutkan dengan pengenalan dasar-dasar menggambar, seperti bentuk geometri sederhana, penyusunan objek, serta teknik menggambar manusia beserta atribut profesinya. Setelah memahami materi, anak-anak diberi kesempatan menuangkan imajinasi mereka ke dalam sebuah karya gambar sesuai cita-cita yang diimpikan.',
+    },
+    {
+      type: 'p',
+      text: 'Program ini juga mendukung tema KKN UKDW 2026 yaitu "Penguatan Kapasitas Masyarakat di Bidang Pariwisata, Digitalisasi, dan Kesehatan Lingkungan Berbasis Potensi Lokal". Oleh karena itu, anak-anak tidak hanya diperkenalkan pada profesi konvensional seperti dokter, guru, polisi, dan pemadam kebakaran, tetapi juga profesi yang berkembang seiring kemajuan teknologi, seperti desainer grafis, animator, programmer, hingga pembuat konten edukatif. Selain itu, mereka dikenalkan pada profesi yang berperan dalam menjaga dan mengembangkan potensi alam, seperti arsitek, petani modern, peneliti lingkungan, dan konservasionis.',
+    },
+    {
+      type: 'p',
+      text: 'Melalui pendekatan tersebut, anak-anak diajak memahami bahwa teknologi tidak hanya dimanfaatkan untuk hiburan, tetapi juga dapat menjadi sarana untuk mempromosikan potensi daerah, mendukung pendidikan, serta membantu menyelesaikan berbagai persoalan lingkungan. Di sisi lain, mereka juga belajar bahwa setiap profesi memiliki peran penting dalam mewujudkan pembangunan yang berkelanjutan.',
+    },
+    {
+      type: 'p',
+      text: 'Antusiasme peserta terlihat sepanjang kegiatan berlangsung. Anak-anak aktif bertanya mengenai profesi yang baru mereka kenal, saling berbagi cerita tentang cita-cita masing-masing, serta menunjukkan semangat ketika menyelesaikan gambar mereka. Beragam hasil karya yang dihasilkan menjadi bukti bahwa setiap anak memiliki imajinasi dan potensi yang patut untuk terus dikembangkan.',
+    },
+    {
+      type: 'p',
+      text: 'Melalui Gores Warna, mahasiswa KKN UKDW tim 43 berharap kegiatan sederhana ini dapat menjadi langkah awal dalam menumbuhkan keberanian anak-anak untuk bermimpi lebih besar. Tidak hanya mengenal berbagai pilihan profesi, mereka juga diharapkan memahami bahwa kreativitas, teknologi, kepedulian terhadap lingkungan, dan pemanfaatan potensi alam merupakan bekal penting dalam membangun masa depan.',
+    },
+    {
+      type: 'p',
+      text: 'Setiap goresan warna yang dihasilkan pada hari itu bukan sekadar gambar di atas kertas. Di baliknya terdapat mimpi yang mulai tumbuh, rasa percaya diri yang mulai terbentuk, dan harapan akan lahirnya generasi muda Dusun Dokgarut yang kreatif, peduli terhadap lingkungan, serta siap menghadapi tantangan di era digital.',
+    },
+  ],
+
+  ckg: [
+    {
+      type: 'p',
+      text: 'Dusun Dokgarut, Watukarung, Pacitan – Mahasiswa Kuliah Kerja Nyata (KKN) UKDW Angkatan 43 melaksanakan program kerja bidang kesehatan berupa pelayanan pemeriksaan kesehatan gratis bagi warga Dusun Dokgarut pada Kamis (2/7/2026). Kegiatan yang dimulai sejak pukul 08.30 WIB ini diselenggarakan atas koordinasi dan penyelarasan program kerja bersama Puskesmas Pembantu (Pustu) Sempon selaku instansi kesehatan setempat.',
+    },
+    {
+      type: 'p',
+      text: 'Pelayanan kesehatan ini difokuskan pada deteksi dini faktor risiko penyakit tidak menular, khususnya hipertensi dan diabetes melitus. Langkah ini diambil guna mengevaluasi kondisi fisik masyarakat sekaligus memberikan edukasi mengenai miskonsepsi medis yang berkembang di lingkungan warga, di mana hipertensi kerap dianggap hanya menyerang kelompok lanjut usia.',
+    },
+    {
+      type: 'p',
+      text: 'Secara teknis, pelaksanaan pemeriksaan fisik dilakukan mandiri oleh mahasiswa KKN, meliputi pengukuran tekanan darah serta pengecekan kadar gula darah sewaktu. Berdasarkan data kehadiran di lapangan, mayoritas sasaran didominasi oleh kelompok masyarakat pra-lansia dan lansia. Meski demikian, mahasiswa juga mengarahkan beberapa remaja yang hadir di lokasi untuk mengikuti skrining dasar. Keikutsertaan kelompok usia muda ini dioptimalkan untuk menyampaikan edukasi preventif bahwa fluktuasi tekanan darah tinggi dapat terjadi pada usia produktif akibat pola hidup yang kurang sehat.',
+    },
+    {
+      type: 'p',
+      text: 'Program kerja ini dirancang guna mendukung implementasi tema KKN UKDW 2026, khususnya dalam aspek "Penguatan Kapasitas Masyarakat di Bidang Kesehatan Lingkungan Berbasis Potensi Lokal". Melalui interaksi langsung saat pemeriksaan, warga diimbau untuk lebih cermat dalam mengelola konsumsi makanan sehari-hari, salah satunya dengan memanfaatkan komoditas pangan lokal yang rendah natrium guna menjaga stabilitas tekanan darah.',
+    },
+    {
+      type: 'p',
+      text: 'Rangkaian kegiatan berjalan tertib dengan partisipasi aktif dari masyarakat. Selain melakukan pemeriksaan fisik, warga dari berbagai kelompok usia memanfaatkan momentum ini untuk berkonsultasi mengenai hasil capaian angka tensi mereka. Kehadiran para remaja dalam agenda ini juga membantu memperluas jangkauan edukasi kesehatan di tingkat keluarga.',
+    },
+    {
+      type: 'p',
+      text: 'Melalui sinkronisasi agenda bersama Pustu Sempon ini, tim KKN UKDW berharap kesadaran warga Dusun Dokgarut terhadap pentingnya kontrol kesehatan berkala dapat meningkat. Screening awal ini diharapkan mampu mendorong masyarakat untuk menerapkan tindakan preventif secara mandiri demi mewujudkan lingkungan dusun yang lebih sehat dan produktif.',
+    },
+  ],
+
+  menabung: [
+    {
+      type: 'p',
+      text: 'Setiap anak pasti senang saat menerima uang jajan dari orang tua. Ada yang langsung membeli jajanan, ada yang membeli mainan kecil, dan ada juga yang memilih menyimpan sebagian uangnya. Meskipun terlihat sederhana, kebiasaan mengelola uang sejak kecil ternyata dapat menjadi bekal yang sangat berharga ketika dewasa nanti.',
+    },
+    {
+      type: 'p',
+      text: 'Mengatur keuangan bukan berarti harus memiliki banyak uang terlebih dahulu. Justru, kemampuan mengelola uang dapat mulai dilatih dari hal-hal kecil, seperti menyisihkan sebagian uang jajan dan belajar membedakan antara kebutuhan dan keinginan. Kebiasaan sederhana ini akan membantu anak menjadi lebih disiplin, bertanggung jawab, dan tidak mudah menghabiskan uang hanya karena ingin mengikuti teman atau membeli sesuatu yang sedang populer.',
+    },
+    {
+      type: 'p',
+      text: 'Menurut Otoritas Jasa Keuangan (OJK), literasi keuangan merupakan kemampuan seseorang dalam memahami serta mengelola keuangan agar dapat mengambil keputusan yang tepat. Literasi keuangan yang baik perlu ditanamkan sejak usia dini karena akan membentuk kebiasaan positif dalam mengelola uang hingga dewasa.',
+    },
+    {
+      type: 'p',
+      text: 'Salah satu langkah yang paling mudah dilakukan adalah membiasakan anak menyisihkan uang jajannya. Misalnya, jika setiap hari mendapatkan uang jajan sebesar Rp5.000, anak dapat menyimpan Rp1.000 ke dalam celengan, sedangkan sisanya digunakan untuk membeli makanan atau kebutuhan lainnya. Nilainya memang tidak besar, tetapi jika dilakukan secara rutin setiap hari, tabungan tersebut akan terus bertambah. Dari kebiasaan sederhana inilah anak belajar bahwa hasil yang besar berasal dari usaha kecil yang dilakukan secara konsisten.',
+    },
+    {
+      type: 'p',
+      text: 'Selain belajar menabung, anak juga perlu memahami perbedaan antara kebutuhan dan keinginan. Kebutuhan adalah sesuatu yang memang harus dipenuhi, seperti membeli alat tulis, buku sekolah, atau makanan. Sementara itu, keinginan adalah sesuatu yang menyenangkan tetapi tidak harus segera dimiliki, misalnya membeli mainan baru atau jajan berlebihan. Dengan memahami perbedaan tersebut, anak akan lebih bijak dalam menggunakan uang dan tidak mudah bersikap boros.',
+    },
+    {
+      type: 'p',
+      text: 'Kebiasaan menabung juga mengajarkan anak untuk menghargai kerja keras orang tua. Uang yang diterima setiap hari bukan datang begitu saja, melainkan hasil dari usaha dan pekerjaan orang tua. Karena itu, menggunakan uang dengan bijak merupakan salah satu bentuk rasa syukur dan penghargaan terhadap pengorbanan mereka.',
+    },
+    {
+      type: 'p',
+      text: 'Pentingnya budaya menabung juga terus didorong oleh pemerintah melalui OJK. Pada peringatan Hari Indonesia Menabung 2025, OJK menyampaikan bahwa melalui Program KEJAR (Satu Rekening Satu Pelajar), hampir 88% pelajar Indonesia, atau sekitar 58,32 juta pelajar, telah memiliki rekening tabungan dengan total simpanan lebih dari Rp34 triliun. Data tersebut menunjukkan bahwa semakin banyak anak Indonesia yang mulai mengenal kebiasaan menabung sejak usia sekolah.',
+    },
+    {
+      type: 'p',
+      text: 'Melalui program kerja KKN ini, anak-anak diajak belajar bahwa mengatur keuangan tidaklah sulit. Mereka dikenalkan pada cara menggunakan uang secara bijak, membedakan kebutuhan dan keinginan, serta membiasakan diri menyisihkan sebagian uang jajan untuk ditabung. Harapannya, kebiasaan baik ini tidak berhenti setelah kegiatan selesai, tetapi terus diterapkan dalam kehidupan sehari-hari bersama keluarga.',
+    },
+    {
+      type: 'p',
+      text: 'Pada akhirnya, menabung bukan tentang seberapa banyak uang yang dimiliki, melainkan tentang membangun kebiasaan yang baik. Menyisihkan sedikit uang setiap hari mungkin terlihat sepele, tetapi jika dilakukan dengan disiplin, kebiasaan tersebut akan menjadi bekal yang bermanfaat bagi masa depan anak. Seperti pepatah yang sering kita dengar, sedikit demi sedikit, lama-lama menjadi bukit.',
+    },
+  ],
+
+  qris: [
+    {
+      type: 'p',
+      text: 'Kegiatan diawali dengan sambutan dari Bapak Kepala Dusun Dokgarut. Dalam sambutannya, beliau menyampaikan apresiasi kepada mahasiswa KKN yang telah menyelenggarakan kegiatan ini serta berharap para pelaku usaha dapat memanfaatkan teknologi pembayaran digital untuk mendukung perkembangan usahanya.',
+    },
+    {
+      type: 'p',
+      text: 'Setelah sambutan, acara dilanjutkan dengan penyampaian materi mengenai pengertian QRIS, manfaat penggunaan QRIS, cara pendaftaran, proses transaksi menggunakan QRIS, serta berbagai keuntungan yang dapat diperoleh pelaku usaha melalui pembayaran digital. Peserta juga diberikan kesempatan untuk berdiskusi dan mengajukan pertanyaan terkait penggunaan QRIS dalam kegiatan usaha sehari-hari.',
+    },
+    {
+      type: 'p',
+      text: 'Kegiatan ini diikuti oleh 10 orang peserta yang merupakan pelaku usaha di Dusun Dokgarut. Selama kurang lebih satu jam, peserta mengikuti sosialisasi dengan antusias dan aktif berdiskusi mengenai penerapan QRIS pada usaha mereka.',
+    },
+    {
+      type: 'p',
+      text: 'Melalui kegiatan ini diharapkan para pelaku usaha semakin memahami pentingnya digitalisasi sistem pembayaran serta mampu memanfaatkan QRIS untuk meningkatkan kualitas pelayanan kepada pelanggan dan memperluas peluang usaha di era digital.',
+    },
+    {
+      type: 'p',
+      text: 'Kegiatan ditutup dengan sesi foto bersama antara mahasiswa KKN, Bapak Kepala Dusun, dan seluruh peserta sebagai bentuk dokumentasi sekaligus kenang-kenangan atas terlaksananya program kerja tersebut.',
+    },
+  ],
+
+  'manajemen-waktu': [
+    {
+      type: 'p',
+      text: 'Seiring berkembangnya teknologi digital, penggunaan gadget telah menjadi bagian yang tidak terpisahkan dari aktivitas anak-anak. Selain digunakan sebagai sarana hiburan, gadget juga dapat membantu proses belajar dan menambah wawasan apabila dimanfaatkan dengan tepat. Namun, penggunaan yang berlebihan tanpa pengaturan waktu dapat berdampak pada kebiasaan belajar, kesehatan, serta berkurangnya interaksi sosial dengan lingkungan sekitar. Oleh karena itu, diperlukan pembiasaan sejak dini agar anak-anak mampu menggunakan gadget secara seimbang dan bertanggung jawab.',
+    },
+    {
+      type: 'p',
+      text: 'Kegiatan diawali dengan sesi ice breaking yang bertujuan menciptakan suasana belajar yang menyenangkan sekaligus membangun kedekatan antara mahasiswa KKN dan peserta. Anak-anak tampak antusias mengikuti permainan yang diberikan sehingga suasana menjadi lebih hidup dan interaktif sebelum memasuki materi utama.',
+    },
+    {
+      type: 'p',
+      text: 'Selanjutnya, mahasiswa KKN mengajak peserta berdiskusi mengenai aktivitas sehari-hari serta kebiasaan mereka dalam menggunakan gadget. Melalui penyampaian materi yang sederhana dan komunikatif, anak-anak dikenalkan pada pentingnya membagi waktu untuk belajar, bermain, membantu orang tua, beribadah, beristirahat, dan menggunakan gadget sesuai kebutuhan. Edukasi juga diberikan mengenai manfaat gadget apabila digunakan untuk kegiatan positif serta dampak yang dapat muncul jika penggunaannya tidak dikendalikan.',
+    },
+    {
+      type: 'p',
+      text: 'Sebagai bentuk penerapan materi, setiap anak diajak membuat buku kecil jadwal kegiatan harian dari lembaran kertas yang dilipat dan dihias sesuai kreativitas masing-masing. Di dalam buku tersebut, mereka menyusun sendiri urutan aktivitas mulai dari bangun tidur hingga waktu tidur kembali. Anak-anak menentukan pembagian waktu untuk belajar, bermain, membantu orang tua, beribadah, beristirahat, serta menetapkan batas waktu penggunaan gadget setiap harinya. Melalui kegiatan ini, peserta belajar mengenali pentingnya mengatur prioritas dan membangun kebiasaan disiplin dalam menjalani rutinitas sehari-hari.',
+    },
+    {
+      type: 'p',
+      text: 'Selama kegiatan berlangsung, peserta menunjukkan semangat yang tinggi. Mereka aktif menjawab pertanyaan, berbagi pengalaman mengenai kebiasaan menggunakan gadget, serta antusias saat menghias buku jadwal yang telah dibuat. Beragam hasil karya yang dihasilkan mencerminkan kreativitas sekaligus pemahaman anak-anak terhadap pentingnya mengelola waktu dengan baik.',
+    },
+    {
+      type: 'p',
+      text: 'Melalui program ini, mahasiswa KKN UKDW Tim 43 berharap anak-anak Dusun Dokgarut dapat menerapkan kebiasaan mengatur waktu dalam kehidupan sehari-hari dan menjadikan gadget sebagai sarana yang mendukung proses belajar maupun pengembangan diri. Buku jadwal yang telah mereka buat diharapkan dapat menjadi pengingat sederhana untuk menjalankan aktivitas secara lebih teratur, seimbang, dan bertanggung jawab.',
+    },
+    {
+      type: 'p',
+      text: 'Kegiatan ini diharapkan menjadi langkah awal dalam membentuk kebiasaan positif sejak usia dini. Dengan kemampuan mengatur waktu serta menggunakan gadget secara bijak, anak-anak dapat tumbuh menjadi generasi yang disiplin, kreatif, mampu memanfaatkan perkembangan teknologi secara positif, serta tetap menjaga keseimbangan antara dunia digital dan kehidupan sehari-hari.',
+    },
+  ],
+
+  'kesehatan-digital': [
+    {
+      type: 'p',
+      text: 'Sore itu, suasana di Dusun Dokgarut terasa beda dari biasanya. Anak-anak muda Karang Taruna berkumpul, bukan buat rapat rutin atau gotong royong, tapi buat sesuatu yang agak jarang dibahas terang-terangan: kesehatan digital mereka sendiri. Proker bertajuk "Ngelacak Kesehatan Digitalmu!" ini digelar khusus untuk remaja dan pemuda Karang Taruna Dokgarut, dan ternyata jadi salah satu sesi paling jujur yang pernah ada.',
+    },
+    {
+      type: 'p',
+      text: 'Sebelum ngobrol panjang lebar, peserta diminta mengisi pre-test terlebih dahulu. Terdapat sembilan pertanyaan sederhana soal kebiasaan digital mereka, mulai dari kesadaran soal waktu pakai HP, sampai gampang tidaknya terbawa emosi gara-gara konten yang lewat di beranda. Hasilnya cukup menarik, rata-rata skor peserta ada di angka 2,22 dari skala 3, yang artinya kondisi literasi digital sehat mereka masuk kategori Sedang menuju Tinggi. Peserta ternyata sudah cukup sadar soal waktu pemakaian HP dan siap terapkan kebiasaan yang lebih sehat. Kepercayaan diri dalam memilah konten juga jadi titik terkuat mereka.',
+    },
+    {
+      type: 'p',
+      text: 'Meski begitu, ada juga yang masih menjadi PR bersama: overthinking setelah scrolling, kepala dan mata yang gampang lelah usai menatap layar, serta gampang terbawa emosi karena konten yang ditonton. Tiga hal inilah yang kemudian menjadi sasaran utama materi hari itu.',
+    },
+    {
+      type: 'p',
+      text: 'Setelah pre-test selesai, acara dibuka dengan perkenalan santai. Tidak lama, suasana langsung dipanaskan dengan permainan "kepala, pundak, lutut, kaki" — permainan sederhana yang ternyata efektif banget untuk mengetes seberapa fokus peserta di tengah kelelahan sehari-hari. Yang menang dan yang kalah dipisah menjadi dua kelompok, langsung mencairkan suasana dan membuat peserta lebih siap masuk ke materi inti.',
+    },
+    {
+      type: 'p',
+      text: 'Sesi berikutnya menjadi momen paling mengejutkan buat banyak peserta. Setiap orang diminta jujur menghitung berapa lama screen time harian mereka, lalu dirata-rata bersama. Hasilnya: rata-rata penggunaan HP dan media sosial di Karang Taruna Dokgarut adalah 5,438 jam per hari (dari total 54,38 jam dibagi 10 orang). Angka ini sukses bikin beberapa peserta kaget sendiri saat mendengar totalnya.',
+    },
+    {
+      type: 'p',
+      text: 'Dari situ, obrolan berlanjut ke soal hubungan kita dengan HP itu sebenarnya seperti apa, dan aplikasi mana yang paling sering dibuka. Jawabannya cukup seragam: TikTok, Instagram, Facebook, dan YouTube. Namun yang paling mendominasi jelas TikTok, dengan alasan pemakaian terbanyak adalah untuk hiburan, scroll tanpa tujuan, dan belanja online.',
+    },
+    {
+      type: 'p',
+      text: 'Untuk menyegarkan suasana, peserta diajak melakukan ice breaking unik: hening total selama dua menit, tanpa gadget, tanpa suara. Setelah itu, mereka diminta bercerita apa yang ada di pikiran selama dua menit tadi. Jawabannya menjadi momen paling seru sekaligus lucu; ada yang bilang diam saja tidak memikirkan apa-apa, ada yang sibuk menahan ketawa, ada yang kepikiran cicilan, sampai ada yang jujur bilang cuma kepikiran mie ayam. Ini menjadi pengingat kalau pikiran kita ternyata tidak pernah benar-benar "kosong", bahkan tanpa HP sekalipun.',
+    },
+    {
+      type: 'p',
+      text: 'Materi berlanjut ke sesi yang cukup personal: mengecek riwayat pencarian di TikTok masing-masing. Peserta cukup terbuka menyebutkan isi histori mereka, mulai dari kasus viral, konten hiburan, sampai video tutorial. Ketahuan bahwa sekitar 98% dari histori pencarian peserta didominasi konten hiburan. Angka ini menjadi pintu masuk untuk membahas bedanya konten hiburan dan konten edukasi, serta pentingnya menyeimbangkan keduanya.',
+    },
+    {
+      type: 'p',
+      text: 'Di sinilah materi masuk ke titik paling dalam. Berdasarkan data dari sumber terpercaya dan studi kasus di luar negeri, penggunaan layar yang berlebihan ternyata berkaitan erat dengan meningkatnya risiko depresi dan stres. Dibahas pula temuan mengenai remaja yang terdiagnosis mengalami gangguan jiwa akibat penggunaan HP berlebihan, munculnya masalah perilaku akibat terlalu sering bermain game, serta over-stimulasi dari media sosial yang bisa membuat perubahan emosi menjadi cepat dan sulit dikendalikan. Kabar baiknya, semua ini bisa dicegah dengan pengelolaan screen time yang lebih sadar.',
+    },
+    {
+      type: 'p',
+      text: 'Menjelang penutup, peserta diajak menentukan sendiri topik apa yang ingin dibahas di pertemuan kedua agar materi benar-benar sesuai kebutuhan mereka. Peserta juga diajak berefleksi mengenai langkah apa yang bisa dilakukan setelah tahu risiko screen time berlebihan. Beberapa jawaban yang muncul antara lain: menjadi lebih produktif, mengisi waktu luang dengan kegiatan lain, dan belajar menyaring informasi maupun emosi yang masuk.',
+    },
+    {
+      type: 'p',
+      text: 'Sesi ditutup dengan menonton video animasi pendek yang menggambarkan bagaimana jadinya dunia kalau manusia terlalu sibuk dengan HP dan mengabaikan sekitarnya—sampai kecelakaan pun bisa terjadi hanya karena semua orang lebih peduli status online dibanding keadaan nyata di depan mata. Sebuah pengingat kecil dengan pesan besar: makin sibuk dengan HP, makin berkurang juga kepedulian kita ke sesama.',
+    },
+    {
+      type: 'p',
+      text: 'Pertemuan kedua sudah dijadwalkan berlangsung pada 11 Juli 2026, pukul 19.30, berlokasi di Balai Dusun. Melihat antusiasme peserta di sesi pertama, sesi kedua dipastikan bakal menjadi obrolan yang sama serunya, atau bahkan lebih.',
+    },
+  ],
+
+  maps: [
+    {
+      type: 'p',
+      text: 'Program ini hadir sebagai solusi atas belum terdaftarnya sejumlah fasilitas penting dan potensi usaha warga di layanan peta digital, yang kerap kali membuat Dusun Dokgarut terlewat dari radar pendatang maupun wisatawan.',
+    },
+    { type: 'h2', text: 'Menjemput Bola: Pendataan hingga Pendaftaran Titik Lokasi' },
+    {
+      type: 'p',
+      text: 'Pelaksanaan program kerja ini diawali dengan tahapan observasi dan pendataan langsung di lapangan. Tim KKN menyusuri Dusun Dokgarut untuk mendata berbagai titik vital yang belum terindeks di pencarian Google Maps. Titik-titik ini mencakup fasilitas umum seperti Balai Dusun dan Pos Kamling, hingga sektor penggerak ekonomi warga seperti warung makan, warung mie ayam, dan toko kelontong.',
+    },
+    {
+      type: 'p',
+      text: 'Melalui pendaftaran lokasi secara resmi di Google Maps, masyarakat luar yang sedang berkunjung atau melintas di kawasan Watukarung kini dapat dengan mudah menemukan letak fasilitas publik maupun tempat berbelanja di Dusun Dokgarut hanya melalui layar ponsel mereka.',
+    },
+    { type: 'h2', text: 'Optimalisasi UMKM: Bukan Sekadar Menancapkan Pin Lokasi' },
+    {
+      type: 'p',
+      text: 'Salah satu fokus utama dari program ini adalah penguatan sektor Usaha Mikro, Kecil, dan Menengah (UMKM). Pendaftaran lokasi saja dirasa tidak cukup untuk menarik minat konsumen. Oleh karena itu, mahasiswa KKN melakukan langkah optimalisasi profil bisnis bagi setiap UMKM yang didaftarkan.',
+    },
+    {
+      type: 'p',
+      text: 'Optimalisasi ini dilakukan dengan melengkapi detail informasi usaha, seperti menetapkan jadwal jam buka dan tutup yang akurat, serta menambahkan titik koordinat yang presisi. Tidak berhenti di situ, tim KKN juga mengambil dan mengunggah foto-foto visual yang menarik—mulai dari tampilan depan warung hingga produk yang dijual—serta memberikan ulasan (rating) awal yang positif.',
+    },
+    {
+      type: 'p',
+      text: 'Langkah ini dirancang secara khusus untuk membangun kepercayaan publik (trust) secara digital. Ketika seseorang mencari tempat makan atau toko di sekitar area tersebut, profil UMKM Dusun Dokgarut akan tampil meyakinkan, profesional, dan menarik untuk dikunjungi.',
+    },
+    { type: 'h2', text: 'Harapan Ke Depan: UMKM Sukses, Dusun Makin Maju' },
+    {
+      type: 'p',
+      text: 'Program digitalisasi wilayah ini bukan sekadar pemetaan geografis, melainkan sebuah investasi jangka panjang bagi pertumbuhan desa. Dengan hadirnya fasilitas umum dan UMKM Dusun Dokgarut di Google Maps, diharapkan tidak ada lagi masyarakat atau pendatang yang kesulitan mencari lokasi penting di kawasan ini.',
+    },
+    {
+      type: 'p',
+      text: 'Lebih dari itu, optimalisasi digital ini membawa secercah harapan bagi para pelaku usaha lokal. Dengan visibilitas yang lebih luas dan profil yang menarik, tingkat kunjungan konsumen diharapkan akan terus meningkat. Pada akhirnya, program ini menjadi jembatan agar roda perekonomian Dusun Dokgarut berputar lebih cepat, membawa UMKM lokal menuju kesuksesan yang lebih besar di era teknologi.',
+    },
+  ],
 };
 
 export default newsArticles;

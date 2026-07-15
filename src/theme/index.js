@@ -168,6 +168,11 @@ const theme = extendTheme({
           color: '#15803D',
           _dark: { bg: 'whiteAlpha.100', color: '#4ADE80' },
         },
+        sosialisasi: {
+          bg: '#F5EEFF',
+          color: '#6B21A8',
+          _dark: { bg: 'whiteAlpha.100', color: '#C4B5FD' },
+        },
       },
     },
     Link: {

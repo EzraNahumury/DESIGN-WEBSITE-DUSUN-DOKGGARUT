@@ -18,6 +18,14 @@ import x4 from '../assets/news/x4.jpg';
 import x5 from '../assets/news/x5.jpg';
 import lesehan from '../assets/news/lesehan.jpg';
 import bantuanPendidikan from '../assets/news/bantuan-pendidikan.png';
+import menabung from '../assets/news/menabung.jpg';
+import manejemen from '../assets/news/manejemen.jpg';
+import qris from '../assets/news/qris.jpeg';
+import warna from '../assets/news/warna.jpeg';
+import ckg from '../assets/news/ckg.jpeg';
+import geo from '../assets/news/geo.jpeg';
+import geo3 from '../assets/news/geo3.jpeg';
+import maps from '../assets/news/maps.png';
 import kampungKb from '../assets/WATUKARUNG02.jpg';
 
 import fotoKasap from '../assets/travel/kasap.jpg';
@@ -25,6 +33,29 @@ import fotoCokel from '../assets/travel/cokel.jpg';
 import fotoCamping from '../assets/travel/camping.jpg';
 import fotoParkir from '../assets/travel/parkir.jpg';
 import fotoPakKus from '../assets/travel/pakkus.jpg';
+import benteng from '../assets/travel/benteng mati.jpg';
+import bercak from '../assets/travel/bercak.jpg';
+import denombo from '../assets/travel/denombo.jpg';
+import dila from '../assets/travel/dila.jpg';
+import iyek from '../assets/travel/iyek.jpg';
+import rajaampat from '../assets/travel/rajaampat.jpg';
+import sitos from '../assets/travel/sitoss.png';
+import sumaryono from '../assets/travel/sumaryono.jpg';
+import puan from '../assets/travel/puan.png';
+import wl from '../assets/travel/wl.jpg';
+import watukarungTravel from '../assets/travel/watukarung.jpg';
+import waduk from '../assets/travel/waduk.jpg';
+import esetetic from '../assets/travel/esetetic.jpg';
+import balai from '../assets/travel/balai.jpg';
+import lapangan from '../assets/travel/lapangan.jpg';
+import ams from '../assets/travel/ams.png';
+import pos from '../assets/travel/pos.png';
+import ayam from '../assets/travel/ayam.jpg';
+import sukino from '../assets/travel/sukino.jpg';
+import putra from '../assets/travel/putra.jpg';
+import masjid from '../assets/travel/masjid.jpg';
+import wan from '../assets/travel/wan.jpg';
+import homestay from '../assets/travel/homestay.jpg';
 
 import logoKarangTaruna from '../assets/supports/karang-taruna.png';
 import logoPkk from '../assets/supports/pkk-removebg-preview.png';
@@ -44,7 +75,7 @@ export const stats = [
 ];
 
 // ---------------------------------------------------------------------------
-// Berita — category: 'pemerintahan' | 'pendidikan' | 'kesehatan'
+// Berita — category: 'pemerintahan' | 'pendidikan' | 'kesehatan' | 'sosialisasi'
 // dateISO dipakai untuk pengurutan, date untuk tampilan.
 // ---------------------------------------------------------------------------
 const news = [
@@ -218,6 +249,86 @@ const news = [
     caption:
       'Bantuan finansial pemerintah kabupaten bagi siswa dari keluarga kurang mampu untuk perlengkapan sekolah, seragam, dan biaya operasional pendidikan pada Tahun Anggaran 2017.',
   },
+  {
+    id: 'gores-warna',
+    category: 'pendidikan',
+    title: 'Gores Warna: Menggambar Cita-Cita, Menumbuhkan Mimpi Anak Dusun Dokgarut',
+    date: '3 Juli 2026',
+    dateISO: '2026-07-03',
+    image: warna,
+    caption:
+      'Melalui program Gores Warna, mahasiswa KKN mengajak anak-anak Dusun Dokgarut, Watukarung, Pacitan untuk mengenal berbagai profesi dan cita-cita melalui kegiatan menggambar yang kreatif dan menyenangkan. Selain mengembangkan kemampuan seni, program ini juga memperkenalkan peran teknologi digital, pemanfaatan potensi alam, serta pentingnya kepedulian terhadap lingkungan sebagai bekal bagi generasi muda dalam menghadapi masa depan.',
+  },
+  {
+    id: 'ckg',
+    category: 'kesehatan',
+    title: 'Cek Kesehatan Gratis: Hipertensi dan Gula Darah',
+    date: '2 Juli 2026',
+    dateISO: '2026-07-02',
+    image: ckg,
+    caption:
+      'Mahasiswa KKN UKDW kelompok 43 berkolaborasi dengan Puskesmas Pembantu (Pustu) Sempon menggelar layanan pemeriksaan kesehatan gratis di Dusun Dokgarut pada Kamis (2/7/2026). Berfokus pada deteksi dini hipertensi dan diabetes, kegiatan ini menyasar warga lintas generasi—mulai dari lansia hingga remaja—sekaligus memberikan edukasi tentang pentingnya menjaga pola hidup sehat sejak usia produktif.',
+  },
+  {
+    id: 'kesehatan-digital',
+    category: 'sosialisasi',
+    title: 'Ngelacak Kesehatan Digitalmu!',
+    date: '3 Juli 2026',
+    dateISO: '2026-07-03',
+    image: geo3,
+    caption:
+      'Ketika Karang Taruna Dokgarut ngobrolin soal HP, scroll, dan rasa cemas yang nggak kelihatan.',
+  },
+  {
+    id: 'menabung',
+    category: 'pendidikan',
+    title: 'Belajar Mengatur Keuangan Sejak Dini: Menabung dan Menyisihkan Uang Jajan',
+    date: '6 Juli 2026',
+    dateISO: '2026-07-06',
+    image: menabung,
+    caption:
+      '"Sedikit demi sedikit, lama-lama menjadi bukit." Program KKN yang mengajak anak-anak untuk melek finansial sejak usia sekolah. Lewat kebiasaan kecil seperti menyimpan sebagian uang jajan di celengan dan menahan diri dari sifat boros, anak-anak tidak hanya belajar tentang uang, tetapi juga tentang kedisiplinan, rasa syukur, dan cara mempersiapkan masa depan yang lebih terencana.',
+  },
+  {
+    id: 'manajemen-waktu',
+    category: 'pendidikan',
+    title: 'Belajar Mengatur Waktu dan Menggunakan Gadget dengan Bijak Bersama Anak-Anak Dusun Dokgarut',
+    date: '9 Juli 2026',
+    dateISO: '2026-07-09',
+    image: manejemen,
+    caption:
+      'Dusun Dokgarut, Watukarung, Pacitan, Kamis 9 Juli 2026. Mahasiswa Kuliah Kerja Nyata (KKN) Universitas Kristen Duta Wacana, Kelompok 43 melaksanakan program kerja bertajuk "Manajemen Waktu dan Penggunaan Gadget Secara Bijak untuk Anak-Anak". Kegiatan ini bertujuan memberikan edukasi kepada anak-anak mengenai pentingnya mengatur waktu serta memanfaatkan gadget secara bijaksana agar teknologi dapat memberikan manfaat dalam kehidupan sehari-hari.',
+  },
+  {
+    id: 'qris',
+    category: 'sosialisasi',
+    title: 'Pengenalan dan Sosialisasi Metode Pembayaran QRIS bagi Pelaku Usaha',
+    date: '10 Juli 2026',
+    dateISO: '2026-07-10',
+    image: qris,
+    caption:
+      'Pada hari Jumat, 10 Juli 2026 pukul 19.30 WIB, telah dilaksanakan program kerja KKN bertajuk "Pengenalan dan Sosialisasi Metode Pembayaran QRIS bagi Pelaku Usaha" yang bertempat di Balai Dusun Dokgarut, Pacitan, Jawa Timur. Kegiatan ini bertujuan untuk meningkatkan pemahaman para pelaku usaha mengenai sistem pembayaran digital QRIS sebagai salah satu metode transaksi yang praktis, aman, dan efisien.',
+  },
+  {
+    id: 'kesehatan-digital2',
+    category: 'sosialisasi',
+    title: 'Ketika Layar Bicara Lebih Keras dari Kata-Kata',
+    date: '11 Juli 2026',
+    dateISO: '2026-07-11',
+    image: geo,
+    caption:
+      'Sore itu, halaman balai warga Dusun Dokgarut kembali ramai. Sesi kedua dari program "Ngelacak Kesehatan Digitalmu!" digelar, dan kali ini suasananya sedikit berbeda — bukan cuma karena materinya makin dalam, tapi karena ada tamu istimewa yang datang untuk berbagi cerita.',
+  },
+  {
+    id: 'maps',
+    category: 'sosialisasi',
+    title: 'Digitalisasi Wilayah: Pemetaan Fasilitas Publik dan Optimalisasi UMKM Dusun Dokgarut Berbasis Google Maps',
+    date: '15 Juli 2026',
+    dateISO: '2026-07-15',
+    image: maps,
+    caption:
+      'Di era serba digital saat ini, visibilitas suatu wilayah di dunia maya menjadi salah satu kunci utama untuk mendorong kemajuan ekonomi dan aksesibilitas. Menyadari hal tersebut, mahasiswa Kuliah Kerja Nyata (KKN) menyelenggarakan program kerja bertajuk "Digitalisasi Wilayah: Pemetaan Fasilitas Publik dan Optimalisasi UMKM Dusun Dokgarut Berbasis Google Maps".',
+  },
 ];
 
 // Semua berita, terbaru lebih dulu (stabil untuk tanggal yang sama).
@@ -230,6 +341,7 @@ export const newsCategories = [
   { key: 'pemerintahan', label: 'Pemerintahan' },
   { key: 'pendidikan', label: 'Pendidikan' },
   { key: 'kesehatan', label: 'Kesehatan' },
+  { key: 'sosialisasi', label: 'Sosialisasi' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -277,6 +389,144 @@ export const TravelPlace = [
     image: fotoCamping,
     location:
       'https://www.google.com/maps/place/Camping+Area+Watu+Payung+%22Batu+Cinta%22/@-8.2388314,110.9834905,16.93z/data=!4m6!3m5!1s0x2e7bddd2205de849:0x63f179765fe9181f!8m2!3d-8.241214!4d110.9857759!16s%2Fg%2F11v0sn374n',
+  },
+  {
+    title: "Sito's Pizza Pizza & Bar",
+    category: 'Kuliner',
+    image: sitos,
+    location: 'https://maps.app.goo.gl/CZ7EF4eoDmUy9XB67',
+  },
+  {
+    title: 'Parkiran Pak Sumaryono',
+    category: 'Fasilitas',
+    image: sumaryono,
+    location: 'https://maps.app.goo.gl/pNunHHbMqdriBAxc9',
+  },
+  {
+    title: 'Warung Kopi Puandu',
+    category: 'Kuliner',
+    image: puan,
+    location: 'https://maps.app.goo.gl/j1qDjYjSTPtGosxj8',
+  },
+  {
+    title: 'WL Aksesoris Pacitan',
+    category: 'Souvenir',
+    image: wl,
+    location: 'https://maps.app.goo.gl/FPWeP1EcBAdisHAk7',
+  },
+  {
+    title: 'Warung Makan Mak Iyek Pantai Kasap',
+    category: 'Kuliner',
+    image: iyek,
+    location: 'https://maps.app.goo.gl/Ugj7PKgo9ukBRBkt6',
+  },
+  {
+    title: 'Warung Seafood Mbak Dilla',
+    category: 'Kuliner',
+    image: dila,
+    location: 'https://maps.app.goo.gl/rsfMwZFeceRrv6P66',
+  },
+  {
+    title: 'Pantai Denombo',
+    category: 'Wisata',
+    image: denombo,
+    location: 'https://maps.app.goo.gl/oG66Q8uE3QAGNARq8',
+  },
+  {
+    title: 'Pantai Benteng Mati',
+    category: 'Wisata',
+    image: benteng,
+    location: 'https://maps.app.goo.gl/cF296waXSMQgEwdt5',
+  },
+  {
+    title: 'Pantai Bercak',
+    category: 'Wisata',
+    image: bercak,
+    location: 'https://maps.app.goo.gl/S6mVW2Gm88JiEtuF6',
+  },
+  {
+    title: 'Spot Foto Raja Ampatnya Puncak Kasap',
+    category: 'Wisata',
+    image: rajaampat,
+    location: 'https://maps.app.goo.gl/xEDKVsgaxzzK5KZ79',
+  },
+  {
+    title: 'Pantai Watukarung',
+    category: 'Wisata',
+    image: watukarungTravel,
+    location: 'https://maps.app.goo.gl/RrGeeZj9JQmY8izc8',
+  },
+  {
+    title: 'Pantai Waduk',
+    category: 'Wisata',
+    image: waduk,
+    location: 'https://maps.app.goo.gl/g3UMMHq63sqqpuU88',
+  },
+  {
+    title: 'WAN LAS',
+    category: 'Bengkel',
+    image: wan,
+    location: 'https://maps.app.goo.gl/oGCgVEjuhWBEfH7h8',
+  },
+  {
+    title: 'AMS GARAGE',
+    category: 'Bengkel',
+    image: ams,
+    location: 'https://maps.app.goo.gl/tMbCygope2Y7XkHe9',
+  },
+  {
+    title: 'Estetic',
+    category: 'Toko',
+    image: esetetic,
+    location: 'https://maps.app.goo.gl/QMZdVfTQ22QWupJd8',
+  },
+  {
+    title: 'Warung Mie Ayam Lina',
+    category: 'Kuliner',
+    image: ayam,
+    location: 'https://maps.app.goo.gl/VrLMPDRWRvpqyAD39',
+  },
+  {
+    title: 'Pos Kamling Dusun Dokgarut',
+    category: 'Fasilitas',
+    image: pos,
+    location: 'https://maps.app.goo.gl/MNJ4NmK8ijVX5MRX9',
+  },
+  {
+    title: 'Balai Dusun Dokgarut',
+    category: 'Fasilitas',
+    image: balai,
+    location: 'https://maps.app.goo.gl/P5aLWg9w21DoW814A',
+  },
+  {
+    title: 'Lapangan Voli Dokgarut',
+    category: 'Fasilitas',
+    image: lapangan,
+    location: 'https://maps.app.goo.gl/pAw921NAQCnLdVzZ9',
+  },
+  {
+    title: 'Masjid Baiturrohim Watukarung',
+    category: 'Fasilitas',
+    image: masjid,
+    location: 'https://maps.app.goo.gl/VtnGF57Wvsc3JJox7',
+  },
+  {
+    title: 'Toko Berkah Putra',
+    category: 'Toko',
+    image: putra,
+    location: 'https://maps.app.goo.gl/ambHSEi4ZhXtZPvB6',
+  },
+  {
+    title: 'Warung Pak Sukino',
+    category: 'Toko',
+    image: sukino,
+    location: 'https://maps.app.goo.gl/a3Vdiaz4YxBHceb98',
+  },
+  {
+    title: 'Homestay Pondok Kranji',
+    category: 'Fasilitas',
+    image: homestay,
+    location: 'https://maps.app.goo.gl/Rs3SgbTgf81FcZnG9',
   },
 ];
 
