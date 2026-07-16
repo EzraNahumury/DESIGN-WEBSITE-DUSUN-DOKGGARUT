@@ -273,8 +273,8 @@ const news = [
     id: 'kesehatan-digital',
     category: 'sosialisasi',
     title: 'Ngelacak Kesehatan Digitalmu!',
-    date: '3 Juli 2026',
-    dateISO: '2026-07-03',
+    date: '5 Juli 2026',
+    dateISO: '2026-07-05',
     image: geo3,
     caption:
       'Ketika Karang Taruna Dokgarut ngobrolin soal HP, scroll, dan rasa cemas yang nggak kelihatan.',
